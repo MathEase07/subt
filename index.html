@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="tl">
 <head>
@@ -29,6 +30,7 @@
     }
     #subtitle {
       font-size: clamp(18px, 4vw, 30px);
+      color: red;
       line-height:1.4;
       max-width: 92%;
       background: rgba(0,0,0,0.45);
@@ -56,7 +58,7 @@
 </head>
 <body>
   <div class="wrap">
-    <div id="subtitle">Pindutin ang Play sa iyong app upang simulan ang subtitles.</div>
+    <div id="subtitle">Sa Huling Jeep ng Gabi.</div>
     <div id="time"></div>
   </div>
   <div id="debug" style="display:none;"></div>
@@ -77,225 +79,232 @@
 const subtitles = [
   /* I'll use the durations provided, accumulated to create start times.
      Start at 0. */
-  { t: 0.0, text: "[Sound effects: Crickets, distant barking dogs, tricycle engine passing. Soft acoustic guitar music fades in]" },
+  { t: 0.0, text: "..." },
 
   // Narrator opening (broken into segments as in script)
   { t: 12.0, text: "Sa lahat ng hindi inaasahan sa buhay—tulad ng sabayang pagpatak ng ulan at LBM, o yung pag-message mo sa crush mo na isi-seen lang" },
-  { t: 23.0, text: "Walang mas nakakagulat kaysa sa pagbabalik ng isang taong hindi mo na inakalang babalik pa." },
+  { t: 23.0, text: "Walang mas nakakagulat kaysa sa pagbabalik ng taong hindi mo na inakalang babalik pa." },
   { t: 31.0, text: "Ito ang kwento ni Bea… at ng isang jeepney ride na magbabago ng lahat." },
 
-  { t: 38.0, text: "[Sound effects: Ulan, jeepney engine starting, “para po!”]" },
+  
 
   // Next chunk: Narrator describing Bea on the jeep
-  { t: 39.0, text: "Gabi na sa Sariaya. Si Bea, galing sa kanyang part-time, pagod, gutom, at basa sa ulan." },
-  { t: 44.0, text: "Sa loob ng jeep, may apat na pasahero — isa ay tulog, isa kumakain ng fishball, at isa... ang ex niyang si Paolo." },
+  { t: 37.0, text: "Gabi na sa Sariaya. Si Bea, galing sa kanyang part-time, pagod, gutom, at basa sa ulan." },
+  { t: 44.0, text: "Sa loob ng jeep, may tatlong pasahero — isa ay tulog, isa kumakain ng fishball, at isa... ang ex niyang si Paolo." },
 
-  { t: 51.0, text: "[Sound effects: Jeepney brake squeak. Background: light rain, tambucho noise.]" },
+  { t: 54.0, text: "..." },
 
   // Short dialogue exchange
-  { t: 71.0, text: "Bea (sarcastic): Ay wow. Si Mr. Ghoster. Buhay ka pa pala." },
-  { t: 74.0, text: "Paolo (shock): Bea?! Uy, hala, ikaw nga! Grabe, ang ganda mo pa rin!" },
-  { t: 75.0, text: "Bea (deadpan): Wag mo akong daanin sa bola. Hindi ako siopao." },
+  { t: 60.0, text: "Ay wow. Si Mr. Ghoster. Buhay ka pa pala." },
+  { t: 63.0, text: "Bea?! Uy, hala, ikaw nga! Grabe, ang ganda mo pa rin!" },
+  { t: 69.0, text: "Wag mo akong daanin sa bola. Hindi ako siopao." },
 
   // Narrator: backstory coffee shop
-  { t: 79.0, text: "Bago pa mangyari ang lahat ng ‘to, si Bea at si Paolo ay may kwento." },
-  { t: 81.0, text: "Isang kwento ng mga unang ngiti, at ng mga unang halakhak sa gitna ng mga kape at kwentuhan." },
-  { t: 83.0, text: "Nagkakilala sila sa isang coffee shop sa Barangay Poblacion 2, Sariaya, Quezon, sa likod ng Ongville, to be exact sa Brewleaf." },
-  { t: 88.0, text: "Isang lugar na puno ng kwento, at puno ng tamis ng mga simula." },
-  { t: 92.0, text: "[Sound effects: Coffee machine steaming, clinking of cups. Soft background chatter in a coffee shop.]" },
+  { t: 75.0, text: "Bago pa mangyari ang lahat ng ‘to, si Bea at si Paolo may kwento." },
+  { t: 80.0, text: "Isang kwento ng mga unang ngiti, at ng mga unang halakhak sa gitna ng mga kape at kwentuhan." },
+  { t: 86.0, text: "Nagkakilala sila sa isang coffee shop sa Barangay Poblacion 2, Sariaya, Quezon, sa likod ng Ongville, to be exact sa Brewleaf." },
+  { t: 95.0, text: "Isang lugar na puno ng kwento, at puno ng tamis ng mga simula." },
+  { t: 100.0, text: "..." },
 
   // Character descriptions
-  { t: 94.0, text: "Si Beatriz Gabrielle Castillo, also known as Bea, isang independent na babae, outgoing at madaldal." },
-  { t: 96.0, text: "Siya yung tipo ng tao na laging game sa usapan, hindi nauubusan ng kwento, at mahilig magpuyat para mag-binge watch ng mga paborito niyang series hanggang madaling araw." },
-  { t: 102.0, text: "Si Paolo Antonio Villanueva, isang dedicated na athlete na laging puno ng energy." },
-  { t: 106.0, text: "Medyo playful siya at mahilig magbiro, kaya kahit seryoso ang training ay nagagawa niyang gawing masaya ang paligid." },
-  { t: 111.0, text: "Natural sa kanya ang pagiging palakaibigan, at may confidence siyang nakakahawa — tipong kaya niyang pasayahin ang kahit sinong kasama niya." },
+  { t: 102.0, text: "Si Beatriz Gabrielle Castillo, also known as Bea, isang independent na babae, outgoing at madaldal." },
+  { t: 111.0, text: "Siya yung tipo ng tao na laging game sa usapan, hindi nauubusan ng kwento, at mahilig magpuyat para mag-binge watch ng mga paborito niyang series hanggang madaling araw." },
+  { t: 122.0, text: "Si Paolo Antonio Villanueva, or Paolo, isang dedicated na athlete na laging puno ng energy." },
+  { t: 132.0, text: "Medyo playful siya at mahilig magbiro, kaya kahit seryoso ang training ay nagagawa niyang gawing masaya ang paligid." },
+  { t: 139.0, text: "Natural sa kanya ang pagiging palakaibigan, at may confidence siyang nakakahawa — tipong kaya niyang pasayahin ang kahit sinong kasama niya." },
 
   // Bell ring scene
-  { t: 115.0, text: "[Sound effects: The bell of the coffee shop rings as Paolo walks in.]" },
-  { t: 117.0, text: "Paolo (playful, excited): Excuse me, miss… may free WiFi ba dito? Kasi feeling ko mas mabilis ang connection kung sayo ako makikipag-usap." },
-  { t: 126.0, text: "Bea (smiling, sarcastic): Free WiFi? Kung paanong libre ang utang ng mga kababayan mo sa mga kaibigan nila — 'free' lang yan." },
-  { t: 133.0, text: "Paolo (laughing): Grabe ka naman, ha! Hindi ba pwedeng magtanong lang… syempre may kasamang charm, para hindi lang ako sa court mabilis maka-score. Pwede ba maki-table? I’m Paolo by the way." },
-  { t: 144.0, text: "[Sound effects: Trina’s voice in the background, teasing Bea.]" },
-  { t: 146.0, text: "Trina (shouting): Bea, ayan na siya! Baka ito siya na yung Mr. Right na hinahanap mo! Tall, check, mestizo, check, handsome — oh super check. Hindi mo ba siya tatanggapin?" },
+  { t: 149.0, text: "..." },
+  { t: 151.0, text: "Excuse me, miss… may free WiFi ba dito? Kasi feeling ko mas mabilis ang connection kung sayo ako makikipag-usap." },
+  { t: 159.0, text: "Free WiFi? Kung paanong libre ang utang ng mga kababayan mo sa mga kaibigan nila 'free' lang yan." },
+  { t: 166.0, text: "Grabe ka naman, ha! Hindi ba pwedeng magtanong lang… syempre may kasamang charm, para hindi lang ako sa court mabilis maka-score. Pwede ba maki-table? I’m Paolo by the way." },
+ 
+  { t: 179.0, text: "Bea, ayan na siya! Baka siya na yung Mr. Right na hinahanap mo! Tall, check, mestizo, check, handsome, oh super check. Hindi mo ba siya tatanggapin?" },
 
   // Narrator about Trina
-  { t: 157.0, text: "Narrator: Si Trina, ang best friend ni Bea, ang palaging kasangga sa mga ganitong moments." },
-  { t: 163.0, text: "Bea (rolling her eyes): Trina, sobra ang pagka-OA ha! Ikalma mo and yes Paolo, pwede ka maki-table. I’m Bea and itong OA na katabi ko, si Trina nga pala." },
-  { t: 168.0, text: "Paolo (chuckling): Thanks. Wait, sabi na eh familiar ka! You’re Ms. Castillo, right? Si Ms. Top 1 since junior high school — na kulang nalang i-perfect niya lahat ng quizzes and exams. It’s nice to finally meet my idol in person." },
-  { t: 174.0, text: "Bea: Yes, that’s me, Mr. MVP ng basketball ng intramurals 2024." },
-
+  { t: 191.0, text: "Si Trina, ang best friend ni Bea, ang palaging kasangga sa mga ganitong moments. Hindi sya tinatablan ng hiya, at mahilig mag biro. Lalo na kapag si Bea ang topic." },
+  { t: 205.0, text: "Trina, sobra ang pagka-OA ha! Ikalma mo and yes Paolo, pwede ka maki-table. I’m Bea and itong OA na katabi ko, si Trina nga pala." },
+  { t: 216.0, text: "Thanks. Wait, sabi na eh familiar ka! You’re Ms. Castillo, right? Si Ms. Top 1 since junior high school — na kulang nalang i-perfect niya lahat ng quizzes and exams. It’s nice to finally meet my idol in person." },
+  { t: 232.0, text: "Yes, that’s me, Mr. MVP ng basketball ng intramurals 2024." },
+  { t: 238.0, text: "So, ano ako dito? Thirdwheel ganon?"},
   // Transition / short break line
-  { t: 180.0, text: "Sinong maga-akala na dito na pala magsisimula ang pagkaka-ibigan, este pagkakaibigan ng dalawa." },
-  { t: 182.0, text: "It was not hard na maging close yung dalawa, considering na they’re schoolmates from the same school and grade level." },
-  { t: 186.0, text: "Ano nga bang mangyayari sa kanilang friendship? We’ll be giving you the next latest tea of the story after this short break." },
+  { t: 243.0, text: "Sinong maga-akala na dito na pala magsisimula ang pagkaka-ibigan, este pagkakaibigan ng dalawa." },
+  { t: 250.0, text: "It was not hard na maging close yung dalawa, considering na they’re schoolmates from the same school and grade level." },
+  { t: 257.0, text: "Ano nga bang mangyayari sa kanilang friendship? We’ll be giving you the next latest tea of the story after this short break." },
+  { t: 267.0, text: "Commercial"},
+  { t: 338.0, text: "Breaking News"},
 
   // Scene 2: The Confession
-  { t: 192.0, text: "Scene 2: The Confession" },
-  { t: 193.0, text: "Narrator: Simula ng araw na nagkausap sila sa Brewleaf, the two of them got closer." },
-  { t: 196.0, text: "Nagkaroon na ng after-class tambayan, paggala sa malls at mga bayan, at napapadalas din ang pagmessage nila sa isa’t isa na para bang part na yon ng kanilang daily routine." },
 
-  { t: 199.0, text: "Jasper: Uy, manood kayo ng game namin ni Pao sa Sabado — championship na ‘to, at siguradong MVP na naman si Mr. Villanueva, kahit minsan mas busy pa siya sa gala kaysa sa training." },
+  { t: 341.0, text: "Scene 2: The Confession"},
+  { t: 343.0, text: "Simula ng araw na nagkausap sila sa Brewleaf, the two of them got closer." },
+  { t: 347.0, text: "Nagkaroon na ng after-class tambayan, paggala sa malls at mga bayan, at napapadalas din ang pagmessage nila sa isa’t isa na para bang part na yon ng kanilang daily routine." },
 
-  { t: 206.0, text: "Narrator: Si Jasper, best friend ni Paolo simula pagkabata, isa ring athlete pero mas chill at mahilig mang-asar." },
-  { t: 210.0, text: "Trina: Tamang tama, wala kaming gagawin ni Bea this weekend." },
-  { t: 212.0, text: "Bea: Si ate, desisyon ka na naman sa buhay ko." },
-  { t: 214.0, text: "Trina: Pero aminin mo, tama ako, right?" },
-  { t: 216.0, text: "Bea: Oo na, payag na. See you sa weekends and good luck sa game." },
+  { t: 360.0, text: "Uy, manood kayo ng game namin ni Pao sa Sabado — championship na ‘to, at siguradong MVP na naman si Mr. Villanueva, kahit minsan mas busy pa siya sa gala kaysa sa training." },
 
-  { t: 220.0, text: "Paolo: Thanks Bea, gagalingan ko promise para sayo — este para sa inyo syempre. Para sa inyo I mean, sa mga taong sumusuporta sa akin." },
-  { t: 224.0, text: "Jasper: Sus, ayan ka na naman sa mga padale mo pare." },
+  { t: 371.0, text: "Si Jasper, best friend ni Paolo simula pagkabata, isa ring athlete pero mas chill at mahilig mang-asar. Siya yung tipo ng barkada na laging may dalang punchline pero, marunong din sumuporta sa tamang oras" },
+  { t: 388.0, text: "Tamang tama, wala kaming gagawin ni Bea this weekend." },
+  { t: 391.0, text: "Si ate, desisyon ka na naman sa buhay ko." },
+  { t: 395.0, text: "Pero aminin mo, tama ako, right?" },
+  { t: 399.0, text: "Oo na, payag na. See you sa weekends and good luck sa game." },
+
+  { t: 402.0, text: "Thanks Bea, gagalingan ko promise para sayo — este para sa inyo syempre. Para sa inyo I mean, sa mga taong sumusuporta sa akin." },
+  { t: 411.0, text: "Sus, ayan ka na naman sa mga padale mo pare." },
 
   // Game day and commentary
-  { t: 226.0, text: "Narrator: Dumating na ang game day. Puno ang Complex ng sigawan, pawis, at kaba." },
-  { t: 232.0, text: "The game was intense — sunod-sunod ang fast breaks, halos tabla ang score hanggang sa huling minuto." },
-  { t: 238.0, text: "At sa pinaka-kritikal na sandali, Paolo sank the final basket. Champion ang team, at sa huli, siya pa ang tinanghal na MVP." },
-  { t: 250.0, text: "[SFX: Crowd cheering, whistles, tapos unti-unting humihina hanggang maging ambient city sounds]" },
+  { t: 416.0, text: "Dumating na ang game day. Puno ang Complex ng sigawan, pawis, at kaba." },
+  { t: 423.0, text: "Jasper, the hype man he is. Hindi mapigilang mang-asar sa bleachers." },
+  { t: 429.0, text: "habang si Bea naman, nakaupo sa gitna ng crowd. Hindi alam kung magpo-focus ba sa score board, o sa bawat galaw ng isang tao. Si Paolo Villanueva. " },
+  { t: 440.0, text: "The game was intense, sunod-sunod ang fast breaks, halos tabla ang score hanggang sa huling minuto." },
+  { t: 447.0, text: "Every dribble, every shot. Ramdam ang lahat ng bigat." },
+  { t: 452.0, text: "At ng sa pinaka-kritikal na sandali, Paolo sank the final basket. Champion ang team, at sa huli, siya pa ang tinanghal na MVP." },
+  { t: 462.0, text: "..." },
 
-  { t: 262.0, text: "Narrator: Pero imbes na mag-celebrate agad kasama ng teammates, diretso siyang lumapit kay Bea." },
-  { t: 266.0, text: "Paolo: So… Bea. Tinupad ko na yung part ko. Champion, MVP. Ikaw naman—tupadin mo naman yung pangako mo?" },
-  { t: 269.0, text: "Bea: Anong pangako?" },
-  { t: 270.0, text: "Paolo: Na kapag nanalo ako, lalabas ka with me after the game." },
-  { t: 272.0, text: "Bea: Grabe, seryoso ka pala dun? Akala ko bola lang yun, Villanueva." },
-  { t: 274.0, text: "Paolo: Hindi lahat ng bola dapat binibitawan. So… are you coming with me?" },
-  { t: 275.0, text: "Bea: Fine. Pero wag mong isipin na ito yung typical na date ha. Special request lang kasi MVP ka." },
+  { t: 477.0, text: "Pero imbes na mag-celebrate agad kasama ng teammates, diretso siyang lumapit kay Bea. Pawisan, hingal, pero may ngiti. Na para bang, mas panalo pa sya sa ibang bagay" },
+  { t: 489.0, text: "So… Bea. Tinupad ko na yung part ko. Champion, MVP. Ikaw naman—tupadin mo naman yung pangako mo?" },
+  { t: 496.0, text: "Anong pangako?" },
+  { t: 499.0, text: "Na kapag nanalo ako, lalabas ka with me after the game." },
+  { t: 502.0, text: "Grabe, seryoso ka pala dun? Akala ko bola lang yun, Villanueva." },
+  { t: 507.0, text: "Hindi lahat ng bola dapat binibitawan. So… are you coming with me?" },
+  { t: 512.0, text: "Fine. Pero wag mong isipin na ito yung typical na date ha. Special request lang yan kasi MVP ka." },
 
   // Transition evening walk
-  { t: 278.0, text: "Narration: At nagsimula nga ang gabing iyon sa isang simpleng lakad, pagkatapos ng ingay at sigawan ng court." },
-  { t: 283.0, text: "Sa ilalim ng mga ilaw sa bayan, doon nagkaroon ng mas tahimik pero mas matinding laban—ang pag-amin ng dalawang pusong matagal nang naglalaro sa parehong laro." },
+  { t: 522.0, text: "At nagsimula nga ang gabing iyon sa isang simpleng lakad, pagkatapos ng ingay at sigawan ng court." },
+  { t: 530.0, text: "Sa ilalim ng mga ilaw sa bayan, doon nagkaroon ng mas tahimik pero mas matinding laban—ang pag-amin ng dalawang pusong matagal nang naglalaro sa parehong laro." },
 
-  { t: 289.0, text: "Paolo: Alam mo, mas nakakakaba pa ata yung pagtingin mo habang naglalaro ako kaysa sa mismong championship game." },
-  { t: 295.0, text: "Bea: Wow, excuse me ha. Hindi lahat ng tao nabubudol ng smile mo. Besides, I was just… observing." },
-  { t: 297.0, text: "Paolo: Observing? Kasi ako, matagal ko nang na-observe… na iba ka. Kahit ang ingay ng crowd kanina, ikaw yung napapansin ko." },
-  { t: 301.0, text: "Bea: Ang dami mong bola, Villanueva. Off the court pa rin ba yan?" },
-  { t: 304.0, text: "Paolo: Hindi na 'to bola, Bea. Totoo. Gusto kita." },
-  { t: 307.0, text: "Bea: Alam mo bang delikado yang sinasabi mo? Kasi kapag sinabi kong gusto rin kita, wala ka nang takas." },
-  { t: 311.0, text: "Paolo: Eh 'di sana matagal mo nang sinabi, para mas matagal na akong masaya." },
-
-  { t: 313.0, text: "[SFX: Background fades into a soft instrumental music]" },
-  { t: 319.0, text: "Bea: Okay fine, Villanueva. Gusto rin kita. At least ngayon, stable na yung connection natin." },
-
+  { t: 543.0, text: "Alam mo, mas nakakakaba pa ata yung pagtingin mo habang naglalaro ako kaysa sa mismong championship game." },
+  { t: 550.0, text: "Wow, excuse me ha. Hindi lahat ng tao nabubudol ng smile mo. Besides, I was just… observing." },
+  { t: 557.0, text: "Observing? Kasi ako, matagal ko nang na-observe… na iba ka. Kahit ang ingay ng crowd kanina, ikaw yung napapansin ko." },
+  { t: 565.0, text: "Ang dami mong bola, Villanueva. Off the court pa rin ba yan?" },
+  { t: 570.0, text: "Hindi na 'to bola, Bea. Totoo. Gusto kita. Sa dami ng oras na magkasama tayo. Kahit puro asaran, kahit magkaiba tayo ng mundo. Lagi kong hinahanap yung presence mo." },
+  { t: 583.0, text: "Alam mo bang delikado yang sinasabi mo? Kasi kapag sinabi kong gusto rin kita, wala ka nang takas." },
+  { t: 591.0, text: "Eh 'di sana matagal mo nang sinabi, para mas matagal na akong masaya." },
+  { t: 596.0, text: "Okay fine, Villanueva. Gusto rin kita. At least ngayon, stable na yung connection natin." },
+  { t: 603.0, text: "Yung akala ni bea na friendship, mauuwi pala sa relationship na sa bawat tawa, may lihim na palang nararamdaman," },
+  { t: 610.0, text: "ano kayang mangyayari kapag ang kilig ay sinubok ng oras at distansya. We’ll be giving you the next latest tea of the story after this short break." },
+  { t: 625.0, text: "Commercial"},
+ 
   // Scene 3: weeks pass
-  { t: 326.0, text: "Scene 3: Na para bang…" },
-  { t: 328.0, text: "Narrator: Sa mga sumunod na linggo, para bang walang makakapigil kay Bea at Paolo." },
-  { t: 331.0, text: "Mapa-coffee shop man o post-game dinners, laging magkasama. Sila yung tipo ng mag-jowa na hindi kailangan ng sobrang PDA." },
-  { t: 340.0, text: "[SFX: Tawanan, clinking coffee cups, basketball bouncing faintly in background]" },
+  { t: 643.0, text: "Scene 3: Na para bang…" },
+  { t: 652.0, text: "Sa mga susunod na linggo, para bang walang makakapigil kay Bea at Paolo." },
+  { t: 657.0, text: "Mapa-coffee shop man o post-game dinners, laging magkasama. Sila yung tipo ng mag-jowa na hindi kailangan ng sobrang PDA." },
+  { t: 667.0, text: "sapat na yung asaran, kulitan, at stolen glances para makita ng iba na mayroong spark." },
+  { t: 679.0, text: "..." },
 
-  { t: 342.0, text: "Narrator: Pero sabi nga nila, hindi lahat ng kwento laging masaya. Unti-unti, may naramdaman si Bea na malamig na hangin sa pagitan nila." },
-  { t: 347.0, text: "Bea: Uy, akala ko kanina ka pa tapos sa training. Ilang beses na kitang tinext." },
-  { t: 352.0, text: "Paolo: Yeah, sorry. Ang daming kailangan asikasuhin — Coach, teammates… alam mo na." },
+  { t: 682.0, text: "Pero sabi nga nila, hindi lahat ng kwento laging masaya. Unti-unting, may naramdaman si Bea na malamig na hangin sa pagitan nila." },
+  { t: 692.0, text: "Uy, akala ko kanina ka pa tapos sa training. Ilang beses na kitang tinext." },
+  { t: 698.0, text: "Yeah, sorry. Ang daming kailangan asikasuhin — Coach, teammates… alam mo na." },
 
-  { t: 357.0, text: "Narrator: Sa bawat araw na lumilipas, mas naging bihira ang mga tawag, mas naging pormal ang mga sagot. Hanggang sa isang araw…" },
-  { t: 360.0, text: "[SFX: Phone ringing, message tones, then silence]" },
+  { t: 704.0, text: "Sa bawat araw na lumilipas, mas naging bihira ang mga tawag, mas naging pormal ang mga sagot. ang dating excited na Paolo, ngayon, parang laging may iniisip na iba. Hanggang sa isang araw…" },
+  { t: 721.0, text: "..." },
 
-  { t: 380.0, text: "Narrator: …wala na. Hindi na siya sumipot sa klase, hindi na siya nakikita sa court, at kahit ilang tawag at mensahe ang ipadala ni Bea, tanging katahimikan lang ang sagot." },
-  { t: 386.0, text: "Trina: Bea… wala pa rin ba?" },
-  { t: 388.0, text: "Bea: Wala. Parang bigla na lang siyang nabura. Kahapon lang, nagpa-plano pa kami ng susunod na lakad. Tapos ngayon… wala na. Hindi man lang nagpaalam." },
+  { t: 739.0, text: "…wala na. Hindi na siya sumipot sa klase, hindi na siya nakikita sa court, at kahit ilang tawag at mensahe ang ipadala ni Bea, tanging katahimikan lang ang sagot." },
+  { t: 753.0, text: "Parang sa isang iglap, naglaho si Paolo Villanueva, at iniwan si Bea gitna ng lahat ng tanong, ng walang kasagutan."},
+  { t: 763.0, text: "Bea… wala pa rin ba?" },
+  { t: 766.0, text: "Wala. Parang, parang bigla na lang siyang nabura. Kahapon lang, nagpa-plano pa kami ng susunod na lakad. Tapos ngayon… wala na. Hindi man lang nagpaalam." },
+  { t: 780.0, text: "Alam  mo, kung ano man yung pinagdadaanan nya, hindi tama na iwan ka nya ng ganito." },
+  { t: 788.0, text: "Pero kahit anong pilit ni Trina na gawing magaan ang pakiramdam ni Bea, ramdam niya ang bigat ng kawalan." },
+  { t: 796.0, text: "Parang bawat kape na kanyang iniinom ay mas mapait, bawat gabi ng binge-watch ay mas mahaba, at bawat alaala ni Paolo ay parang sirang plaka na kahit anong gawin, paulit-ulit sinasambit ang mga ala-alang hindi na maibabalik." },
+  { t: 817.0, text: "Alam mo, Trina… akala ko stable na yung connection namin. Pero siguro… hindi pala ako sapat na signal para manatili siya." },
 
-  { t: 390.0, text: "Narrator: Pero kahit anong pilit ni Trina na gawing magaan ang pakiramdam niya, ramdam ni Bea ang bigat ng kawalan." },
-  { t: 396.0, text: "Bea: Alam mo, Trina… akala ko stable na yung connection namin. Pero siguro… hindi pala ako sapat na signal para manatili siya." },
-
-  { t: 402.0, text: "[SFX: Long pause. Cup gently placed on the saucer. Background fades into silence, then slow, melancholic music.]" },
-  { t: 407.0, text: "Narrator: At sa unang pagkakataon, naiwan si Bea hindi sa gitna ng madaming tao, kundi sa gitna ng sariling katahimikan — hawak-hawak ang tanong na… babalik pa kaya siya?" },
-
+  { t: 830.0, text: "Sa bawat pag alis, may taong naiiwan." },
+  { t: 835.0, text: "At sa unang pagkakataon, naiwan si Bea hindi sa gitna ng madaming tao, kundi sa gitna ng sariling katahimikan — hawak-hawak ang tanong na… babalik pa kaya siya?" },
+  { t: 850.0, text: "..." },
+  { t: 858.0, text: "Breaking News" },
+  { t: 906.0, text: "Commercial" },
   // Scene 4: Two years later
-  { t: 410.0, text: "Scene 4: Bumalik o nagparamdam lang?" },
-  { t: 411.0, text: "Narrator: Dalawang taon ang nakalipas simula ng nawala si Paolo." },
-  { t: 415.0, text: "Nakagraduate na sila ng Senior High School at kasalukuyang mga first year na sila." },
-  { t: 421.0, text: "Kumuha si Bea ng part-time kasi para sa kanya the more na maraming ginagawa baka sakaling mas madali mawala sa isipan niya ang taong iniwan siya sa ere." },
-  { t: 433.0, text: "Isang mauling gabi, matapos ang kanyang shift sa Café Lokal." },
+  { t: 929.0, text: "Scene 4: Bumalik o nagparamdam lang?" },
+  { t: 933.0, text: "Dalawang taon ang nakalipas simula ng nawala si Paolo." },
+  { t: 937.0, text: "Nakagraduate na sila ng Senior High School at kasalukuyang mga first year na sila." },
+  { t: 943.0, text: "Kumuha si Bea ng part-time kasi para sa kanya the more na maraming ginagawa baka sakaling mas madali mawala sa isipan niya ang taong iniwan siya sa ere." },
+  { t: 955.0, text: "Isang mauling gabi, matapos ang kanyang shift sa Café Lokal." },
 
-  { t: 437.0, text: "Bea: Kung minamalas ka nga naman, kung kailan maulan tsaka ko pa nalimutan ang payong ko. Hays ano ba yan!" },
-  { t: 440.0, text: "Narrator: Nagpunta siya sa terminal ng Guis-Guis, at sakto yun na ang last trip pauwi." },
-  { t: 443.0, text: "Sumakay si Bea na pagod, gutom, at basa mula sa ulan. Alas syete na noon, at bukod sa kanya tatlo pa lamang ang laman ng jeep." },
-  { t: 447.0, text: "Isa sa pasahero nito ang naka-upo sa kanyang harapan. Isang taong hindi niya inaakalang babalik pa." },
+  { t: 962.0, text: "Kung minamalas ka nga naman, kung kailan maulan tsaka ko pa nalimutan ang payong ko. Hays ano ba yan!" },
+  { t: 970.0, text: "..." },
+  { t: 979.0, text: "Nagpunta na siya sa terminal ng Guis-Guis, at sakto yun na ang last trip pauwi." },
+  { t: 985.0, text: "Sumakay si Bea na pagod, gutom, at basa mula sa ulan. Alas syete na noon, at bukod sa kanya tatlo pa lamang ang laman ng jeep." },
+  { t: 995.0, text: "Isa sa pasahero nito ang naka-upo sa kanyang harapan. Isang taong hindi niya inaakalang babalik pa." },
+  { t: 1003.0, text: "..." },
+  { t: 1005.0, text: "Ay wow. Si Mr. Ghoster. Buhay ka pa pala." },
+  { t: 1010.0, text: "Bea?! Uy, hala, ikaw nga! Grabe, ang ganda mo pa rin!" },
+  { t: 1014.0, text: "Wag mo akong daanin sa bola. Hindi ako siopao." },
+  { t: 1019.0, text: "Alam mo, ang tagal ko nang gusto kang kausapin. 'Di ko lang alam kung paano…" },
+  { t: 1024.0, text: "Two years, Paolo. Ni “Happy Birthday,” wala." },
+  { t: 1027.0, text: "Nag-type ako nun... hindi ko lang na-send. [chuckles nervously]" },
 
-  { t: 450.0, text: "Bea: Ay wow. Si Mr. Ghoster. Buhay ka pa pala." },
-  { t: 452.0, text: "Paolo: Bea?! Uy, hala, ikaw nga! Grabe, ang ganda mo pa rin!" },
-  { t: 455.0, text: "Bea: Wag mo akong daanin sa bola. Hindi ako siopao." },
+  { t: 1031.0, text: "Aba, grabe. Mahal na mahal mo pala ako... sa drafts." },
+  { t: 1037.0, text: "..." },
 
-  { t: 457.0, text: "[Sound effects: Tawa ng ibang pasahero. Jeepney bumps. Someone says \"lakasan mo 'yung radyo!\"]" },
+  { t: 1045.0, text: "She wanted to be mad. Really mad. Pero in fairness… he still had that smile. That, charming, pa-cute smile that made her heart do cartwheels. Hay naku, puso! " },
+  { t: 1057.0, text: "Bea, totoo… I messed up. I was scared. You were too good for me." },
+  { t: 1063.0, text: "Ang daming nangyayari sa life ko noon, and instead of telling you... I disappeared. Coward move. I know. Pero the truth is…" },
 
-  { t: 463.0, text: "Narrator: Bea tried to look out the window, pretending Paolo was just some random guy na nagbayad ng kulang. But Paolo? Determined." },
-  { t: 466.0, text: "Paolo: Alam mo, ang tagal ko nang gusto kang kausapin. 'Di ko lang alam kung paano…" },
-  { t: 469.0, text: "Bea: Two years, Paolo. Ni “Happy Birthday,” wala." },
-  { t: 471.0, text: "Paolo: Nag-type ako nun... hindi ko lang na-send. [chuckles nervously]" },
+  { t: 1072.0, text: "..." },
 
-  { t: 473.0, text: "Bea: Aba, grabe. Mahal na mahal mo pala ako... sa drafts." },
-  { t: 476.0, text: "[Sound effects: Jeepney conductor yelling “Oh Montecillio na baka may baba diyan!” Guitar music plays again lightly.]" },
+  { t: 1074.0, text: "Bea gising na, tanghali na. Puyat ka naman siguro ano? Maalin sa nagtapos ka ng schoolworks o nagtapos ka ng pinapanood mong series." },
+  { t: 1080.0, text: "None of the above, may part time kasi ako kagabi." },
+  { t: 1088.0, text: "Part time? Eh bakit pugto mata mo? Ayos ka lang ba? May problema ba?" },
 
-  { t: 482.0, text: "Narrator: She wanted to be mad. Really mad. Pero in fairness… he still had that smile." },
-  { t: 487.0, text: "Paolo: Bea, totoo… I messed up. I was scared. You were too good for me." },
-  { t: 492.0, text: "Paolo: Ang daming nangyayari sa life ko noon, and instead of telling you... I disappeared. Coward move. I know. Pero the truth is…" },
+  { t: 1094.0, text: "I saw Paolo in my dream, it felt too surreal na akala ko after 2 years, bumalik siya. He was about to explain why he left pero I woke up, panaginip lang ang lahat." },
+  { t: 1108.0, text: "It’s been 2 years Bea, baka oras na para bitawan ang lahat nang pumipigil sayo sa pag-usad." },
+  { t: 1014.0, text: "By the way, tumawag si Jasper, may meet-up pala kayo ngayon?"},
+  { t: 1119.0, text: "Ah oo, may pagme-meetingan daw kasi kami about our project. Siya kasi kapartner ko sa paggawa ng plates, you know naman engineering things." },
+  { t: 1128.0, text: "Sige na gumayak ka na baka ma-late ka pa." },
 
-  { t: 494.0, text: "[Sound effects: Sudden alarm sound, light rain, and thunder]" },
+  { t: 1132.0, text: "Ang hindi alam ni Bea, hindi lamang project ang pag-uusapan nila, kundi mabibigyan na ng mga kasagutan ang mga katanungang dalawang taon na siyang minumulto siya." },
+  { t: 1145.0, text: "And... Done!   I already sent an email tungkol sa na plano nating mga concepts. I guess it’s a wrap na for our meeting?" },
+  { t: 1155.0, text: "Bea… may kailangan akong sabihin sa’yo. Matagal ko nang gustong ilabas, pero… hindi ko alam kung paano." },
+  { t: 1165.0, text: "Ano ’yon, Jas? Is it about Paolo?" },
 
-  { t: 496.0, text: "Trina: Bea gising na, tanghali na. Puyat ka naman siguro ano? Maalin sa nagtapos ka ng schoolworks o nagtapos ka ng pinapanood mong series." },
-  { t: 502.0, text: "Bea: None of the above, may part time kasi ako kagabi." },
-  { t: 505.0, text: "Trina: Part time? Eh bakit pugto mata mo? Ayos ka lang ba? May problema ba?" },
+  { t: 1171.0, text: "Two years ago… Paolo didn’t just leave school. He was sick." },
+  { t: 1179.0, text: "May nahanap na bukol sa buto niya — osteosarcoma. Doon sa tuhod niya nagsimula." },
+  { t: 1187.0, text: "Bone cancer…?" },
 
-  { t: 509.0, text: "Bea: I saw Paolo in my dream, it felt too surreal na akala ko talaga after 2 years, bumalik siya." },
-  { t: 514.0, text: "Trina: It’s been 2 years Bea, baka oras na para bitawan ang lahat nang pumipigil sayo sa pag-usad." },
+  { t: 1192.0, text: "Oo, at mabilis siyang lumalala. Sinubukan nilang itago kasi ayaw niyang mabahala ka. Lagi niyang sinasabi, “Wag niyo nang guluhin si Bea. She deserves to keep chasing her light, hindi yung malunod sa problema ko.”" },
 
-  { t: 519.0, text: "Bea: Ah oo, may pagme-meetingan daw kasi kami about our project. Siya kasi kapartner ko sa paggawa ng plates, you know naman engineering things." },
-  { t: 526.0, text: "Trina: Sige na gumayak ka na baka ma-late ka pa." },
+  { t: 1210.0, text: "So… all this time… he was protecting me?" },
+  { t: 1218.0, text: "He was taken abroad for treatment… chemotherapy, then surgery. Pero… Bea, hindi kinaya ng katawan niya yung operasyon. Paolo… Paolo didn’t make it." },
+  { t: 1235.0, text: "lumaban siya… pero hindi ko man lang siya nahawakan, hindi man lang ako nakapagpaalam." },
 
-  { t: 530.0, text: "Narrator: Ang hindi alam ni Bea, hindi lamang project ang pag-uusapan nila, kundi mabibigyan na ng mga kasagutan ang mga katanungang dalawang taong minumulto siya." },
+  { t: 1245.0, text: "And that’s what I’ll regret forever, Bea. Na pinayagan ko siyang itago sa’yo. Even in his last and final moments, it’s you that he could ever think of. And, he also left a letter for you." },
 
-  { t: 537.0, text: "Jasper: Bea… may kailangan akong sabihin sa’yo. Matagal ko nang gustong ilabas, pero… hindi ko alam kung paano." },
-  { t: 541.0, text: "Bea: Ano ’yon, Jas? About Paolo?" },
+  { t: 1260.0, text: "Hi Bea. Musta ka na? I know how hard it is for you to be reading this letter kasi I know by now na alam mo na ang balita. Wag ka nang masyadong magpu-puyat ha, wag ka na ding uminom ng sobrang daming kape baka magpalpitate ka na." },
+  { t: 1280.0, text: "Always remember to rest kasi naman di ka nagpapahinga not unless may nagsabi sayo. Lastly, I’m sorry. I’m sorry that I couldn’t tell you all of this, I just didn’t want you to see me vulnerable kasi baka di ko makayanang makita kang umiyak dahil, sa akin."},
+  { t: 1300.0, text: "I promised tita and tito that I will never make you cry whatever the reason might be. You will forever hold the most special place in my heart." },
+  { t: 1312.0, text: "Dumating ang gabing iyon na parang gumuho ang buong mundo ni Bea. Ang lahat ng ingay, tawanan, at lakas ng loob na kilala ng lahat sa kanya ay biglang naglaho." },
+  { t: 1318.0, text: "Para bang, tinangay ng malamig na hangin ng katotohanan. Pagkatapos marinig ang lahat mula kay Jasper, wala na siyang ibang naisip kundi ang takbuhan ang taong matagal nang naging sandalan niya, si Trina" },
+  
+  { t: 1337.0, text: "Bea? Anong nangyari?" },
+  { t: 1342.0, text: "Trina… wala na si Paolo." },
+  { t: 1347.0, text: "W-wait… anong ibig mong sabihin?" },
 
-  { t: 544.0, text: "Jasper (voice breaking): Two years ago… Paolo didn’t just leave school. He was sick." },
-  { t: 547.0, text: "Jasper: May nahanap na bukol sa buto niya — osteosarcoma. Doon sa tuhod niya nagsimula." },
-  { t: 549.0, text: "Bea (whispering): Bone cancer…?" },
+  { t: 1350.0, text: "Si Jasper… sinabi niya na ang lahat. Cancer, treatments abroad, surgery… pero hindi niya kinaya, Trina. Hindi kinaya ng katawan ni Paolo. Wala na sya." },
 
-  { t: 551.0, text: "Jasper: Oo, at mabilis siyang lumalala. Sinubukan nilang itago kasi ayaw niyang mabahala ka. Lagi niyang sinasabi, “Wag niyo nang guluhin si Bea. She deserves to keep chasing her light, hindi yung malunod sa problema ko.”" },
+  { t: 1369.0, text: "Akala ng lahat, si Bea ang matibay. Siya ang laging may lakas ng loob, ang palatawa, ang nagpapagaan ng paligid." },
+  { t: 1379.0, text: "Pero sa mga gabing tahimik, may tinatago siyang sakit na unti-unting sumisira sa katawan niya. At dumating na ang gabing, hindi na nya kayang itago." },
 
-  { t: 556.0, text: "Bea: So… all this time… he was protecting me?" },
-  { t: 560.0, text: "Jasper: He was taken abroad for treatment… chemotherapy, then surgery. Pero… hindi kinaya ng katawan niya yung operasyon. Paolo… he didn’t make it." },
+  { t: 1391.0, text: "Makalipas ang ilang buwan, isang gabi pagkatapos ng kanyang klase sumakay siya sa usual niyang terminal ng jeep at may nakitang familiar na tao." },
 
-  { t: 566.0, text: "[Silence — wind rustling through the trees]" },
-  { t: 569.0, text: "Bea (through tears): lumaban siya… pero hindi ko man lang siya nahawakan, hindi man lang ako nakapagpaalam." },
+  { t: 1380.0, text: "Paolo… bakit? Bakit parang ambigat, ang lamig?" },
+  { t: 1313.0, text: "Tapos na, Bea. Halika na." },
+  { t: 1418.0, text: "Sa? Saan.. tayo pupunta?" },
+  { t: 1423.0, text: "Sa dulo ng biyahe. Hindi ito ang jeep pauwi. Ito ang jeep sa huling pahinga." },
 
-  { t: 574.0, text: "Jasper: And that’s what I’ll regret forever, Bea. Na pinayagan ko siyang itago sa’yo. Even in his last and final moments, it’s you that he could ever think of. He also left a letter for you." },
+  { t: 1429.0, text: "At sa huli, natutunan niya: minsan, ang tunay na pagtatapos ay hindi lang pagkawala, hindi lang pagtataksil… kundi ang pagtanggap na ito na ang huli." },
 
-  { t: 581.0, text: "Paolo (Reading the letter): \"Hi Bea. Musta ka na? I know how hard it is for you to be reading this letter kasi I know by now na alam mo na ang balita. Wag ka nang masyadong magpu-puyat ha, wag ka na ding uminom ng sobrang daming kape baka magpalpitate ka na. Always remember to rest kasi naman di ka nagpapahinga not unless may nagsabi sayo. Lastly, I’m sorry. I’m sorry that I couldn’t tell you all of this, I just didn’t want you to see me vulnerable kasi baka di ko makayanang makita kang umiyak dahil sa akin. I promised tita and tito that I will never make you cry whatever the reason might be. You will forever hold the most special place in my heart.\" — your paopao" },
+  { t: 1440.0, text: "Nalaman nina Trina at ng pamilya ni Bea na nawalan siya ng malay habang sakay ng jeep pauwi. Dinala agad siya sa ospital — pero sa huli, dead on arrival." },
 
-  { t: 606.0, text: "Narrator: Dumating ang gabing iyon na parang gumuho ang buong mundo ni Bea. Ang lahat ng ingay, tawanan, at lakas ng loob na kilala ng lahat sa kanya ay biglang naglaho." },
+  { t: 1452.0, text: "Matagal nang tinatago ni Bea ang kanyang sakit — leukemia. Sa kabila ng tapang at ngiti niya araw-araw, unti-unti na palang nilalamon ng karamdaman ang kanyang katawan." },
 
-  { t: 613.0, text: "Narrator: Pagkatapos marinig ang lahat mula kay Jasper, wala na siyang ibang naisip kundi takbuhan ang taong matagal nang naging sandalan niya — si Trina." },
+  { t: 1463.0, text: "Kinuwento ng konduktor na bago pa man mawalan ng malay si Bea, tila may kausap siya. Mahinahong bulong, may ngiti sa labi — parang may kasabay sa biyahe." },
 
-  { t: 619.0, text: "[Scene: Trina’s apartment, late at night. Footsteps echo.]" },
-  { t: 620.0, text: "Bea (voice cracking): Trina… wala na si Paolo." },
-  { t: 622.0, text: "Trina (shaken): W-wait… anong ibig mong sabihin?" },
+  { t: 1474.0, text: "Nakakapagtaka, sya lang ang sakay sa jeep nung gabing iyon. At doon naunawaan ni Trina: hindi na mag-isa si Bea. Sinundo na siya ni Paolo." },
 
-  { t: 624.0, text: "Bea (collapsing): Si Jasper… sinabi niya na ang lahat. Cancer, treatments abroad, surgery… pero hindi niya kinaya, Trina. Wala na siya." },
+  { t: 1485.0, text: "Sigurado'y ayaw nya ng makita si Bea na patuloy na nahihirapan, kaya tinabihan nya na ito sa huling sakay. Ang jeep na akala ng lahat ay patungo sa Guis-Guis, ay naging jeep papunta sa kabilang dulo ng mundo." },
 
-  { t: 629.0, text: "Narrator: Akala ng lahat, si Bea ang matibay. Siya ang laging may lakas ng loob, ang palatawa, ang nagpapagaan ng paligid." },
-  { t: 633.0, text: "Narrator: Pero sa mga gabing tahimik, may tinatago siyang sakit na unti-unting sumisira sa katawan niya." },
+  { t: 1514.0, text: "At sa huling biyahe ng gabi, muling nagtagpo ang dalawang pusong pinagbuklod ng pag-ibig — hindi man sa mundong ito, kundi sa kabila, kung saan wala nang sakit, wala nang luha, at walang iwanan." },
 
-  { t: 639.0, text: "Narrator: Makalipas ang ilang buwan, isang gabi pagkatapos ng kanyang klase sumakay siya sa usual niyang terminal ng jeep at may nakitang familiar na tao." },
-
-  { t: 642.0, text: "Bea (weakly): Paolo… bakit? Bakit parang ambiga't ang lamig?" },
-  { t: 645.0, text: "Paolo (gentle): Tapos na, Bea. Halika na." },
-  { t: 647.0, text: "Bea (whispering): Saan tayo pupunta?" },
-  { t: 649.0, text: "Paolo (final): Sa dulo ng biyahe. Hindi ito ang jeep pauwi. Ito ang jeep sa huling pahinga." },
-
-  { t: 652.0, text: "Narrator: At sa huli, natutunan niya: minsan, ang tunay na pagtatapos ay hindi lang pagkawala, hindi lang pagtataksil… kundi ang pagtanggap na ito na ang huli." },
-
-  { t: 656.0, text: "Narrator: Nalaman nina Trina at ng pamilya ni Bea na nawalan siya ng malay habang sakay ng jeep pauwi. Dinala agad siya sa ospital — pero sa huli, dead on arrival." },
-
-  { t: 662.0, text: "Narrator: Matagal nang tinatago ni Bea ang kanyang sakit — leukemia. Sa kabila ng tapang at ngiti niya araw-araw, unti-unti na palang nilalamon ng karamdaman ang kanyang katawan." },
-
-  { t: 671.0, text: "Narrator: Kinuwento ng konduktor na bago pa man mawalan ng malay si Bea, tila may kausap siya. Mahinahong bulong, may ngiti sa labi — parang may kasabay sa biyahe." },
-
-  { t: 676.0, text: "Narrator: At doon naunawaan ni Trina: hindi na mag-isa si Bea. Sinundo na siya ni Paolo." },
-
-  { t: 680.0, text: "Narrator: Ang jeep na akala ng lahat ay patungo sa Guis-Guis, ay naging jeep papunta sa kabilang dulo ng mundo." },
-
-  { t: 683.0, text: "Narrator: At sa huling biyahe ng gabi, muling nagtagpo ang dalawang pusong pinagbuklod ng pag-ibig — hindi man sa mundong ito, kundi sa kabila, kung saan wala nang sakit, wala nang luha, at walang iwanan." },
-
-  { t: 687.0, text: "The End." }
+  { t: 1515.0, text: "The End." }
 ];
 
 /* === Subtitle player state === */
