@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sa Huling Jeep ng Gabi — Subtitles</title>
+  <style>
+    :root {
+      --bg: #000;
+      --fg: #fff;
+      --muted: rgba(255,255,255,0.65);
+    }
+    html,body {
+      height:100%;
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family: "Arial", Helvetica, sans-serif;
+    }
+    .wrap {
+      display:flex;
+      flex-direction:column;
+      height:100%;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      box-sizing:border-box;
+      text-align:center;
+    }
+    #subtitle {
+      font-size: clamp(18px, 4vw, 30px);
+      line-height:1.4;
+      max-width: 92%;
+      background: rgba(0,0,0,0.45);
+      padding: 18px 22px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      transition: opacity .35s, transform .35s;
+      opacity: 1;
+    }
+    #time {
+      margin-top:12px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    /* small helper for debugging */
+    #debug {
+      position:fixed;
+      left:8px;
+      bottom:8px;
+      color:var(--muted);
+      font-size:12px;
+      opacity:0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div id="subtitle">Pindutin ang Play sa iyong app upang simulan ang subtitles.</div>
+    <div id="time"></div>
+  </div>
+  <div id="debug" style="display:none;"></div>
+
+<script>
+/*
+  Generated subtitles for "Sa Huling Jeep ng Gabi"
+  - The script provided by the user was parsed as sequential phrases with durations (e.g., (3s)).
+  - Each subtitle entry has a start time in seconds (cumulative) and the visible text (without the (Ns) markers).
+  - Controls: App Inventor should set WebViewer.WebViewString to "play", "pause", or "stop".
+  - There's also a setOffset(seconds) function to shift all subtitle timings (if audio has lead-in silence).
+*/
+
+/* === Subtitles array ===
+   Each item: { t: <start seconds>, text: "<subtitle text>" }
+   NOTE: I grouped phrases into readable subtitle lines while preserving timings.
+*/
+const subtitles = [
+  /* I'll use the durations provided, accumulated to create start times.
+     Start at 0. */
+  { t: 0.0, text: "[Sound effects: Crickets, distant barking dogs, tricycle engine passing. Soft acoustic guitar music fades in]" },
+
+  // Narrator opening (broken into segments as in script)
+  { t: 12.0, text: "Sa lahat ng hindi inaasahan sa buhay—tulad ng sabayang pagpatak ng ulan at LBM, o yung pag-message mo sa crush mo na isi-seen lang" },
+  { t: 23.0, text: "Walang mas nakakagulat kaysa sa pagbabalik ng isang taong hindi mo na inakalang babalik pa." },
+  { t: 31.0, text: "Ito ang kwento ni Bea… at ng isang jeepney ride na magbabago ng lahat." },
+
+  { t: 38.0, text: "[Sound effects: Ulan, jeepney engine starting, “para po!”]" },
+
+  // Next chunk: Narrator describing Bea on the jeep
+  { t: 39.0, text: "Gabi na sa Sariaya. Si Bea, galing sa kanyang part-time, pagod, gutom, at basa sa ulan." },
+  { t: 44.0, text: "Sa loob ng jeep, may apat na pasahero — isa ay tulog, isa kumakain ng fishball, at isa... ang ex niyang si Paolo." },
+
+  { t: 51.0, text: "[Sound effects: Jeepney brake squeak. Background: light rain, tambucho noise.]" },
+
+  // Short dialogue exchange
+  { t: 71.0, text: "Bea (sarcastic): Ay wow. Si Mr. Ghoster. Buhay ka pa pala." },
+  { t: 74.0, text: "Paolo (shock): Bea?! Uy, hala, ikaw nga! Grabe, ang ganda mo pa rin!" },
+  { t: 75.0, text: "Bea (deadpan): Wag mo akong daanin sa bola. Hindi ako siopao." },
+
+  // Narrator: backstory coffee shop
+  { t: 79.0, text: "Bago pa mangyari ang lahat ng ‘to, si Bea at si Paolo ay may kwento." },
+  { t: 81.0, text: "Isang kwento ng mga unang ngiti, at ng mga unang halakhak sa gitna ng mga kape at kwentuhan." },
+  { t: 83.0, text: "Nagkakilala sila sa isang coffee shop sa Barangay Poblacion 2, Sariaya, Quezon, sa likod ng Ongville, to be exact sa Brewleaf." },
+  { t: 88.0, text: "Isang lugar na puno ng kwento, at puno ng tamis ng mga simula." },
+  { t: 92.0, text: "[Sound effects: Coffee machine steaming, clinking of cups. Soft background chatter in a coffee shop.]" },
+
+  // Character descriptions
+  { t: 94.0, text: "Si Beatriz Gabrielle Castillo, also known as Bea, isang independent na babae, outgoing at madaldal." },
+  { t: 96.0, text: "Siya yung tipo ng tao na laging game sa usapan, hindi nauubusan ng kwento, at mahilig magpuyat para mag-binge watch ng mga paborito niyang series hanggang madaling araw." },
+  { t: 102.0, text: "Si Paolo Antonio Villanueva, isang dedicated na athlete na laging puno ng energy." },
+  { t: 106.0, text: "Medyo playful siya at mahilig magbiro, kaya kahit seryoso ang training ay nagagawa niyang gawing masaya ang paligid." },
+  { t: 111.0, text: "Natural sa kanya ang pagiging palakaibigan, at may confidence siyang nakakahawa — tipong kaya niyang pasayahin ang kahit sinong kasama niya." },
+
+  // Bell ring scene
+  { t: 115.0, text: "[Sound effects: The bell of the coffee shop rings as Paolo walks in.]" },
+  { t: 117.0, text: "Paolo (playful, excited): Excuse me, miss… may free WiFi ba dito? Kasi feeling ko mas mabilis ang connection kung sayo ako makikipag-usap." },
+  { t: 126.0, text: "Bea (smiling, sarcastic): Free WiFi? Kung paanong libre ang utang ng mga kababayan mo sa mga kaibigan nila — 'free' lang yan." },
+  { t: 133.0, text: "Paolo (laughing): Grabe ka naman, ha! Hindi ba pwedeng magtanong lang… syempre may kasamang charm, para hindi lang ako sa court mabilis maka-score. Pwede ba maki-table? I’m Paolo by the way." },
+  { t: 144.0, text: "[Sound effects: Trina’s voice in the background, teasing Bea.]" },
+  { t: 146.0, text: "Trina (shouting): Bea, ayan na siya! Baka ito siya na yung Mr. Right na hinahanap mo! Tall, check, mestizo, check, handsome — oh super check. Hindi mo ba siya tatanggapin?" },
+
+  // Narrator about Trina
+  { t: 157.0, text: "Narrator: Si Trina, ang best friend ni Bea, ang palaging kasangga sa mga ganitong moments." },
+  { t: 163.0, text: "Bea (rolling her eyes): Trina, sobra ang pagka-OA ha! Ikalma mo and yes Paolo, pwede ka maki-table. I’m Bea and itong OA na katabi ko, si Trina nga pala." },
+  { t: 168.0, text: "Paolo (chuckling): Thanks. Wait, sabi na eh familiar ka! You’re Ms. Castillo, right? Si Ms. Top 1 since junior high school — na kulang nalang i-perfect niya lahat ng quizzes and exams. It’s nice to finally meet my idol in person." },
+  { t: 174.0, text: "Bea: Yes, that’s me, Mr. MVP ng basketball ng intramurals 2024." },
+
+  // Transition / short break line
+  { t: 180.0, text: "Sinong maga-akala na dito na pala magsisimula ang pagkaka-ibigan, este pagkakaibigan ng dalawa." },
+  { t: 182.0, text: "It was not hard na maging close yung dalawa, considering na they’re schoolmates from the same school and grade level." },
+  { t: 186.0, text: "Ano nga bang mangyayari sa kanilang friendship? We’ll be giving you the next latest tea of the story after this short break." },
+
+  // Scene 2: The Confession
+  { t: 192.0, text: "Scene 2: The Confession" },
+  { t: 193.0, text: "Narrator: Simula ng araw na nagkausap sila sa Brewleaf, the two of them got closer." },
+  { t: 196.0, text: "Nagkaroon na ng after-class tambayan, paggala sa malls at mga bayan, at napapadalas din ang pagmessage nila sa isa’t isa na para bang part na yon ng kanilang daily routine." },
+
+  { t: 199.0, text: "Jasper: Uy, manood kayo ng game namin ni Pao sa Sabado — championship na ‘to, at siguradong MVP na naman si Mr. Villanueva, kahit minsan mas busy pa siya sa gala kaysa sa training." },
+
+  { t: 206.0, text: "Narrator: Si Jasper, best friend ni Paolo simula pagkabata, isa ring athlete pero mas chill at mahilig mang-asar." },
+  { t: 210.0, text: "Trina: Tamang tama, wala kaming gagawin ni Bea this weekend." },
+  { t: 212.0, text: "Bea: Si ate, desisyon ka na naman sa buhay ko." },
+  { t: 214.0, text: "Trina: Pero aminin mo, tama ako, right?" },
+  { t: 216.0, text: "Bea: Oo na, payag na. See you sa weekends and good luck sa game." },
+
+  { t: 220.0, text: "Paolo: Thanks Bea, gagalingan ko promise para sayo — este para sa inyo syempre. Para sa inyo I mean, sa mga taong sumusuporta sa akin." },
+  { t: 224.0, text: "Jasper: Sus, ayan ka na naman sa mga padale mo pare." },
+
+  // Game day and commentary
+  { t: 226.0, text: "Narrator: Dumating na ang game day. Puno ang Complex ng sigawan, pawis, at kaba." },
+  { t: 232.0, text: "The game was intense — sunod-sunod ang fast breaks, halos tabla ang score hanggang sa huling minuto." },
+  { t: 238.0, text: "At sa pinaka-kritikal na sandali, Paolo sank the final basket. Champion ang team, at sa huli, siya pa ang tinanghal na MVP." },
+  { t: 250.0, text: "[SFX: Crowd cheering, whistles, tapos unti-unting humihina hanggang maging ambient city sounds]" },
+
+  { t: 262.0, text: "Narrator: Pero imbes na mag-celebrate agad kasama ng teammates, diretso siyang lumapit kay Bea." },
+  { t: 266.0, text: "Paolo: So… Bea. Tinupad ko na yung part ko. Champion, MVP. Ikaw naman—tupadin mo naman yung pangako mo?" },
+  { t: 269.0, text: "Bea: Anong pangako?" },
+  { t: 270.0, text: "Paolo: Na kapag nanalo ako, lalabas ka with me after the game." },
+  { t: 272.0, text: "Bea: Grabe, seryoso ka pala dun? Akala ko bola lang yun, Villanueva." },
+  { t: 274.0, text: "Paolo: Hindi lahat ng bola dapat binibitawan. So… are you coming with me?" },
+  { t: 275.0, text: "Bea: Fine. Pero wag mong isipin na ito yung typical na date ha. Special request lang kasi MVP ka." },
+
+  // Transition evening walk
+  { t: 278.0, text: "Narration: At nagsimula nga ang gabing iyon sa isang simpleng lakad, pagkatapos ng ingay at sigawan ng court." },
+  { t: 283.0, text: "Sa ilalim ng mga ilaw sa bayan, doon nagkaroon ng mas tahimik pero mas matinding laban—ang pag-amin ng dalawang pusong matagal nang naglalaro sa parehong laro." },
+
+  { t: 289.0, text: "Paolo: Alam mo, mas nakakakaba pa ata yung pagtingin mo habang naglalaro ako kaysa sa mismong championship game." },
+  { t: 295.0, text: "Bea: Wow, excuse me ha. Hindi lahat ng tao nabubudol ng smile mo. Besides, I was just… observing." },
+  { t: 297.0, text: "Paolo: Observing? Kasi ako, matagal ko nang na-observe… na iba ka. Kahit ang ingay ng crowd kanina, ikaw yung napapansin ko." },
+  { t: 301.0, text: "Bea: Ang dami mong bola, Villanueva. Off the court pa rin ba yan?" },
+  { t: 304.0, text: "Paolo: Hindi na 'to bola, Bea. Totoo. Gusto kita." },
+  { t: 307.0, text: "Bea: Alam mo bang delikado yang sinasabi mo? Kasi kapag sinabi kong gusto rin kita, wala ka nang takas." },
+  { t: 311.0, text: "Paolo: Eh 'di sana matagal mo nang sinabi, para mas matagal na akong masaya." },
+
+  { t: 313.0, text: "[SFX: Background fades into a soft instrumental music]" },
+  { t: 319.0, text: "Bea: Okay fine, Villanueva. Gusto rin kita. At least ngayon, stable na yung connection natin." },
+
+  // Scene 3: weeks pass
+  { t: 326.0, text: "Scene 3: Na para bang…" },
+  { t: 328.0, text: "Narrator: Sa mga sumunod na linggo, para bang walang makakapigil kay Bea at Paolo." },
+  { t: 331.0, text: "Mapa-coffee shop man o post-game dinners, laging magkasama. Sila yung tipo ng mag-jowa na hindi kailangan ng sobrang PDA." },
+  { t: 340.0, text: "[SFX: Tawanan, clinking coffee cups, basketball bouncing faintly in background]" },
+
+  { t: 342.0, text: "Narrator: Pero sabi nga nila, hindi lahat ng kwento laging masaya. Unti-unti, may naramdaman si Bea na malamig na hangin sa pagitan nila." },
+  { t: 347.0, text: "Bea: Uy, akala ko kanina ka pa tapos sa training. Ilang beses na kitang tinext." },
+  { t: 352.0, text: "Paolo: Yeah, sorry. Ang daming kailangan asikasuhin — Coach, teammates… alam mo na." },
+
+  { t: 357.0, text: "Narrator: Sa bawat araw na lumilipas, mas naging bihira ang mga tawag, mas naging pormal ang mga sagot. Hanggang sa isang araw…" },
+  { t: 360.0, text: "[SFX: Phone ringing, message tones, then silence]" },
+
+  { t: 380.0, text: "Narrator: …wala na. Hindi na siya sumipot sa klase, hindi na siya nakikita sa court, at kahit ilang tawag at mensahe ang ipadala ni Bea, tanging katahimikan lang ang sagot." },
+  { t: 386.0, text: "Trina: Bea… wala pa rin ba?" },
+  { t: 388.0, text: "Bea: Wala. Parang bigla na lang siyang nabura. Kahapon lang, nagpa-plano pa kami ng susunod na lakad. Tapos ngayon… wala na. Hindi man lang nagpaalam." },
+
+  { t: 390.0, text: "Narrator: Pero kahit anong pilit ni Trina na gawing magaan ang pakiramdam niya, ramdam ni Bea ang bigat ng kawalan." },
+  { t: 396.0, text: "Bea: Alam mo, Trina… akala ko stable na yung connection namin. Pero siguro… hindi pala ako sapat na signal para manatili siya." },
+
+  { t: 402.0, text: "[SFX: Long pause. Cup gently placed on the saucer. Background fades into silence, then slow, melancholic music.]" },
+  { t: 407.0, text: "Narrator: At sa unang pagkakataon, naiwan si Bea hindi sa gitna ng madaming tao, kundi sa gitna ng sariling katahimikan — hawak-hawak ang tanong na… babalik pa kaya siya?" },
+
+  // Scene 4: Two years later
+  { t: 410.0, text: "Scene 4: Bumalik o nagparamdam lang?" },
+  { t: 411.0, text: "Narrator: Dalawang taon ang nakalipas simula ng nawala si Paolo." },
+  { t: 415.0, text: "Nakagraduate na sila ng Senior High School at kasalukuyang mga first year na sila." },
+  { t: 421.0, text: "Kumuha si Bea ng part-time kasi para sa kanya the more na maraming ginagawa baka sakaling mas madali mawala sa isipan niya ang taong iniwan siya sa ere." },
+  { t: 433.0, text: "Isang mauling gabi, matapos ang kanyang shift sa Café Lokal." },
+
+  { t: 437.0, text: "Bea: Kung minamalas ka nga naman, kung kailan maulan tsaka ko pa nalimutan ang payong ko. Hays ano ba yan!" },
+  { t: 440.0, text: "Narrator: Nagpunta siya sa terminal ng Guis-Guis, at sakto yun na ang last trip pauwi." },
+  { t: 443.0, text: "Sumakay si Bea na pagod, gutom, at basa mula sa ulan. Alas syete na noon, at bukod sa kanya tatlo pa lamang ang laman ng jeep." },
+  { t: 447.0, text: "Isa sa pasahero nito ang naka-upo sa kanyang harapan. Isang taong hindi niya inaakalang babalik pa." },
+
+  { t: 450.0, text: "Bea: Ay wow. Si Mr. Ghoster. Buhay ka pa pala." },
+  { t: 452.0, text: "Paolo: Bea?! Uy, hala, ikaw nga! Grabe, ang ganda mo pa rin!" },
+  { t: 455.0, text: "Bea: Wag mo akong daanin sa bola. Hindi ako siopao." },
+
+  { t: 457.0, text: "[Sound effects: Tawa ng ibang pasahero. Jeepney bumps. Someone says \"lakasan mo 'yung radyo!\"]" },
+
+  { t: 463.0, text: "Narrator: Bea tried to look out the window, pretending Paolo was just some random guy na nagbayad ng kulang. But Paolo? Determined." },
+  { t: 466.0, text: "Paolo: Alam mo, ang tagal ko nang gusto kang kausapin. 'Di ko lang alam kung paano…" },
+  { t: 469.0, text: "Bea: Two years, Paolo. Ni “Happy Birthday,” wala." },
+  { t: 471.0, text: "Paolo: Nag-type ako nun... hindi ko lang na-send. [chuckles nervously]" },
+
+  { t: 473.0, text: "Bea: Aba, grabe. Mahal na mahal mo pala ako... sa drafts." },
+  { t: 476.0, text: "[Sound effects: Jeepney conductor yelling “Oh Montecillio na baka may baba diyan!” Guitar music plays again lightly.]" },
+
+  { t: 482.0, text: "Narrator: She wanted to be mad. Really mad. Pero in fairness… he still had that smile." },
+  { t: 487.0, text: "Paolo: Bea, totoo… I messed up. I was scared. You were too good for me." },
+  { t: 492.0, text: "Paolo: Ang daming nangyayari sa life ko noon, and instead of telling you... I disappeared. Coward move. I know. Pero the truth is…" },
+
+  { t: 494.0, text: "[Sound effects: Sudden alarm sound, light rain, and thunder]" },
+
+  { t: 496.0, text: "Trina: Bea gising na, tanghali na. Puyat ka naman siguro ano? Maalin sa nagtapos ka ng schoolworks o nagtapos ka ng pinapanood mong series." },
+  { t: 502.0, text: "Bea: None of the above, may part time kasi ako kagabi." },
+  { t: 505.0, text: "Trina: Part time? Eh bakit pugto mata mo? Ayos ka lang ba? May problema ba?" },
+
+  { t: 509.0, text: "Bea: I saw Paolo in my dream, it felt too surreal na akala ko talaga after 2 years, bumalik siya." },
+  { t: 514.0, text: "Trina: It’s been 2 years Bea, baka oras na para bitawan ang lahat nang pumipigil sayo sa pag-usad." },
+
+  { t: 519.0, text: "Bea: Ah oo, may pagme-meetingan daw kasi kami about our project. Siya kasi kapartner ko sa paggawa ng plates, you know naman engineering things." },
+  { t: 526.0, text: "Trina: Sige na gumayak ka na baka ma-late ka pa." },
+
+  { t: 530.0, text: "Narrator: Ang hindi alam ni Bea, hindi lamang project ang pag-uusapan nila, kundi mabibigyan na ng mga kasagutan ang mga katanungang dalawang taong minumulto siya." },
+
+  { t: 537.0, text: "Jasper: Bea… may kailangan akong sabihin sa’yo. Matagal ko nang gustong ilabas, pero… hindi ko alam kung paano." },
+  { t: 541.0, text: "Bea: Ano ’yon, Jas? About Paolo?" },
+
+  { t: 544.0, text: "Jasper (voice breaking): Two years ago… Paolo didn’t just leave school. He was sick." },
+  { t: 547.0, text: "Jasper: May nahanap na bukol sa buto niya — osteosarcoma. Doon sa tuhod niya nagsimula." },
+  { t: 549.0, text: "Bea (whispering): Bone cancer…?" },
+
+  { t: 551.0, text: "Jasper: Oo, at mabilis siyang lumalala. Sinubukan nilang itago kasi ayaw niyang mabahala ka. Lagi niyang sinasabi, “Wag niyo nang guluhin si Bea. She deserves to keep chasing her light, hindi yung malunod sa problema ko.”" },
+
+  { t: 556.0, text: "Bea: So… all this time… he was protecting me?" },
+  { t: 560.0, text: "Jasper: He was taken abroad for treatment… chemotherapy, then surgery. Pero… hindi kinaya ng katawan niya yung operasyon. Paolo… he didn’t make it." },
+
+  { t: 566.0, text: "[Silence — wind rustling through the trees]" },
+  { t: 569.0, text: "Bea (through tears): lumaban siya… pero hindi ko man lang siya nahawakan, hindi man lang ako nakapagpaalam." },
+
+  { t: 574.0, text: "Jasper: And that’s what I’ll regret forever, Bea. Na pinayagan ko siyang itago sa’yo. Even in his last and final moments, it’s you that he could ever think of. He also left a letter for you." },
+
+  { t: 581.0, text: "Paolo (Reading the letter): \"Hi Bea. Musta ka na? I know how hard it is for you to be reading this letter kasi I know by now na alam mo na ang balita. Wag ka nang masyadong magpu-puyat ha, wag ka na ding uminom ng sobrang daming kape baka magpalpitate ka na. Always remember to rest kasi naman di ka nagpapahinga not unless may nagsabi sayo. Lastly, I’m sorry. I’m sorry that I couldn’t tell you all of this, I just didn’t want you to see me vulnerable kasi baka di ko makayanang makita kang umiyak dahil sa akin. I promised tita and tito that I will never make you cry whatever the reason might be. You will forever hold the most special place in my heart.\" — your paopao" },
+
+  { t: 606.0, text: "Narrator: Dumating ang gabing iyon na parang gumuho ang buong mundo ni Bea. Ang lahat ng ingay, tawanan, at lakas ng loob na kilala ng lahat sa kanya ay biglang naglaho." },
+
+  { t: 613.0, text: "Narrator: Pagkatapos marinig ang lahat mula kay Jasper, wala na siyang ibang naisip kundi takbuhan ang taong matagal nang naging sandalan niya — si Trina." },
+
+  { t: 619.0, text: "[Scene: Trina’s apartment, late at night. Footsteps echo.]" },
+  { t: 620.0, text: "Bea (voice cracking): Trina… wala na si Paolo." },
+  { t: 622.0, text: "Trina (shaken): W-wait… anong ibig mong sabihin?" },
+
+  { t: 624.0, text: "Bea (collapsing): Si Jasper… sinabi niya na ang lahat. Cancer, treatments abroad, surgery… pero hindi niya kinaya, Trina. Wala na siya." },
+
+  { t: 629.0, text: "Narrator: Akala ng lahat, si Bea ang matibay. Siya ang laging may lakas ng loob, ang palatawa, ang nagpapagaan ng paligid." },
+  { t: 633.0, text: "Narrator: Pero sa mga gabing tahimik, may tinatago siyang sakit na unti-unting sumisira sa katawan niya." },
+
+  { t: 639.0, text: "Narrator: Makalipas ang ilang buwan, isang gabi pagkatapos ng kanyang klase sumakay siya sa usual niyang terminal ng jeep at may nakitang familiar na tao." },
+
+  { t: 642.0, text: "Bea (weakly): Paolo… bakit? Bakit parang ambiga't ang lamig?" },
+  { t: 645.0, text: "Paolo (gentle): Tapos na, Bea. Halika na." },
+  { t: 647.0, text: "Bea (whispering): Saan tayo pupunta?" },
+  { t: 649.0, text: "Paolo (final): Sa dulo ng biyahe. Hindi ito ang jeep pauwi. Ito ang jeep sa huling pahinga." },
+
+  { t: 652.0, text: "Narrator: At sa huli, natutunan niya: minsan, ang tunay na pagtatapos ay hindi lang pagkawala, hindi lang pagtataksil… kundi ang pagtanggap na ito na ang huli." },
+
+  { t: 656.0, text: "Narrator: Nalaman nina Trina at ng pamilya ni Bea na nawalan siya ng malay habang sakay ng jeep pauwi. Dinala agad siya sa ospital — pero sa huli, dead on arrival." },
+
+  { t: 662.0, text: "Narrator: Matagal nang tinatago ni Bea ang kanyang sakit — leukemia. Sa kabila ng tapang at ngiti niya araw-araw, unti-unti na palang nilalamon ng karamdaman ang kanyang katawan." },
+
+  { t: 671.0, text: "Narrator: Kinuwento ng konduktor na bago pa man mawalan ng malay si Bea, tila may kausap siya. Mahinahong bulong, may ngiti sa labi — parang may kasabay sa biyahe." },
+
+  { t: 676.0, text: "Narrator: At doon naunawaan ni Trina: hindi na mag-isa si Bea. Sinundo na siya ni Paolo." },
+
+  { t: 680.0, text: "Narrator: Ang jeep na akala ng lahat ay patungo sa Guis-Guis, ay naging jeep papunta sa kabilang dulo ng mundo." },
+
+  { t: 683.0, text: "Narrator: At sa huling biyahe ng gabi, muling nagtagpo ang dalawang pusong pinagbuklod ng pag-ibig — hindi man sa mundong ito, kundi sa kabila, kung saan wala nang sakit, wala nang luha, at walang iwanan." },
+
+  { t: 687.0, text: "The End." }
+];
+
+/* === Subtitle player state === */
+let playing = false;
+let startEpoch = 0;       // Date.now() when playing started/resumed
+let elapsedBefore = 0;    // seconds elapsed before current play (for pause/resume)
+let raf = null;
+let offset = 0;           // global offset in seconds (if you need to shift timings)
+
+/* Helpers */
+function formatSeconds(s) {
+  return (s >= 0) ? s.toFixed(1) + "s" : "0.0s";
+}
+
+function findCurrentSubtitle(sec) {
+  // find the last subtitle whose t <= sec
+  // subtitles are ordered by t
+  for (let i = subtitles.length - 1; i >= 0; i--) {
+    if (sec + 1e-6 >= (subtitles[i].t + offset)) return {index: i, item: subtitles[i]};
+  }
+  return null;
+}
+
+/* Render loop */
+let lastShownIndex = -1;
+function renderLoop() {
+  const now = Date.now();
+  const elapsed = (now - startEpoch) / 1000 + elapsedBefore;
+  const sec = elapsed;
+  const found = findCurrentSubtitle(sec);
+  if (found) {
+    if (found.index !== lastShownIndex) {
+      lastShownIndex = found.index;
+      const text = found.item.text;
+      document.getElementById('subtitle').style.opacity = 0;
+      // small delay for fade
+      setTimeout(()=> {
+        document.getElementById('subtitle').innerText = text;
+        document.getElementById('subtitle').style.opacity = 1;
+      }, 160);
+    }
+  }
+  document.getElementById('time').innerText = formatSeconds(sec);
+  raf = requestAnimationFrame(renderLoop);
+}
+
+/* Controls */
+function doPlay() {
+  if (!playing) {
+    playing = true;
+    startEpoch = Date.now();
+    raf = requestAnimationFrame(renderLoop);
+    // reveal first subtitle immediately if already within range
+    lastShownIndex = -1;
+  }
+}
+
+function doPause() {
+  if (playing) {
+    playing = false;
+    elapsedBefore += (Date.now() - startEpoch) / 1000;
+    if (raf) cancelAnimationFrame(raf);
+  }
+}
+
+function doStop() {
+  playing = false;
+  elapsedBefore = 0;
+  if (raf) cancelAnimationFrame(raf);
+  lastShownIndex = -1;
+  document.getElementById('subtitle').innerText = "Pindutin ang Play sa iyong app upang simulan ang subtitles.";
+  document.getElementById('time').innerText = "";
+}
+
+/* Optional: allow App Inventor to set an offset reset or set current time */
+function setOffset(seconds) {
+  offset = seconds;
+}
+function setTime(seconds) {
+  // set the internal elapsed to `seconds` (useful if you get Player.CurrentPosition)
+  elapsedBefore = seconds;
+  if (playing) {
+    startEpoch = Date.now();
+  } else {
+    // not playing — update display immediately
+    lastShownIndex = -1;
+    const found = findCurrentSubtitle(seconds);
+    if (found) {
+      document.getElementById('subtitle').innerText = found.item.text;
+      document.getElementById('time').innerText = formatSeconds(seconds);
+    }
+  }
+}
+
+/* === Communication with MIT App Inventor ===
+   MIT AI2 (WebViewer) can call setWebViewString to send commands.
+   We'll poll window.AppInventor.getWebViewString() if available (common pattern).
+   Accept commands:
+     play  -> start/resume
+     pause -> pause
+     stop  -> stop/reset
+     time:NNN -> set current time (in seconds)  e.g. "time:45.3"
+     offset:NNN -> set timing offset in seconds (positive or negative)
+*/
+let lastCmd = "";
+
+function processCommand(cmd) {
+  if (!cmd) return;
+  if (cmd === lastCmd) return; // nothing new
+  lastCmd = cmd;
+  // parse possible values
+  if (cmd === "play") {
+    doPlay();
+  } else if (cmd === "pause") {
+    doPause();
+  } else if (cmd === "stop") {
+    doStop();
+  } else if (cmd.startsWith("time:")) {
+    const v = parseFloat(cmd.split(":")[1]);
+    if (!isNaN(v)) setTime(v);
+  } else if (cmd.startsWith("offset:")) {
+    const v = parseFloat(cmd.split(":")[1]);
+    if (!isNaN(v)) setOffset(v);
+  } else {
+    // ignore unknown
+    // show debug if needed
+    //document.getElementById('debug').innerText = "Unknown cmd: " + cmd;
+  }
+}
+
+/* Polling strategy (works for App Inventor WebViewer):
+   App Inventor sets WebViewer.WebViewString to a value which becomes accessible via
+   window.AppInventor.getWebViewString() inside the web page. We'll poll it every 300ms.
+*/
+function pollForCommands() {
+  try {
+    if (window.AppInventor && typeof window.AppInventor.getWebViewString === "function") {
+      const cmd = window.AppInventor.getWebViewString();
+      if (cmd && cmd.length) {
+        processCommand(cmd.trim());
+        // Clear webview string (if the environment supports set)
+        if (typeof window.AppInventor.setWebViewString === "function") {
+          window.AppInventor.setWebViewString(""); // reset on supported hosts
+        }
+      }
+    } else {
+      // fallback: some AI2 versions call setWebViewString with incoming messages,
+      // but if not present, App Inventor can also call JS functions—however polling is safe.
+    }
+  } catch (e) {
+    // ignore
+  }
+}
+setInterval(pollForCommands, 300);
+
+/* Expose functions for direct JS calling (if you want to call from App Inventor via EvaluateJavaScript) */
+window.subtitleControls = {
+  play: doPlay,
+  pause: doPause,
+  stop: doStop,
+  setTime: setTime,
+  setOffset: setOffset
+};
+
+/* initialize */
+doStop(); // show initial message
+</script>
+</body>
+</html>
