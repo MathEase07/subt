@@ -12,10 +12,11 @@
       --muted: rgba(255,255,255,0.65);
     }
     html,body {
-     height:100%;
-      margin:0;
-      background:var(--bg);
-      color:var(--fg);
+      height: 100%;
+      margin: 0;
+      background: url("https://github.com/MathEase07/subt/blob/main/333.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: var(--fg);
       font-family: "Arial", Helvetica, sans-serif;
     }
     .wrap {
@@ -57,7 +58,6 @@
   </style>
 </head>
 <body>
-  
   <div class="wrap">
     <div id="subtitle">Sa Huling Jeep ng Gabi.</div>
     <div id="time"></div>
@@ -376,7 +376,7 @@ function doStop() {
   elapsedBefore = 0;
   if (raf) cancelAnimationFrame(raf);
   lastShownIndex = -1;
-  document.getElementById('subtitle').innerText = "Sa Huling Jeep ng Gabi";
+  document.getElementById('subtitle').innerText = "Sa huling Jeep ng Gabi";
   document.getElementById('time').innerText = "";
 }
 
@@ -475,7 +475,3 @@ doStop(); // show initial message
 </script>
 </body>
 </html>
-
-
-
-
